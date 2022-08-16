@@ -8,10 +8,16 @@
 import UIKit
 import CoreData
 
-class SalesTableViewController: UITableViewController {
+class ClientSalesTableViewController: UITableViewController {
     
     var sales = [Sales]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var selectedClient: Client? {
+        didSet{
+            loadSales()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +39,7 @@ class SalesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.cellForSales, for: indexPath)
-        cell.textLabel?.text = sales[indexPath.row].saleID! + " " + sales[indexPath.row].clientR!.firstName! + " " + sales[indexPath.row].productSR!.name!
+        cell.textLabel?.text = sales[indexPath.row].saleID! + " " + sales[indexPath.row].productSR!.name! + " " + String(format: "%.2f", sales[indexPath.row].productSR!.price)+"€"
         
         return cell
     }
@@ -59,40 +65,25 @@ class SalesTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func loadSales(with request: NSFetchRequest<Sales> = Sales.fetchRequest()) {
+    func loadSales(with request: NSFetchRequest<Sales> = Sales.fetchRequest(), predicate: NSPredicate? = nil) {
+        let clientPredicate = NSPredicate(format: "clientR.phone MATCHES %@", selectedClient!.phone!)
+        // se nao for dado um filtro apenas filtrar pela categoria caso contrario filtrar pelo filtro dado e categoria
+        if let adicionalPredicate = predicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [adicionalPredicate, clientPredicate])
+        }else{
+            request.predicate = clientPredicate
+        }
         do{
+            // colocar os dados que foram colocados no context com o request a cima no array
             sales = try context.fetch(request)
         } catch {
-            print("error loading context \(error)")
+            print("error fetching data \(error)")
         }
         tableView.reloadData()
     }
     
 }
 
-//MARK: - UISearchBarDelegate
 
-extension SalesTableViewController: UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        let request : NSFetchRequest<Sales> = Sales.fetchRequest()
-        let predicate1 = NSPredicate(format: "clientR.firstName contains[cd] %@", searchBar.text!)
-        let predicate2 = NSPredicate(format: "clientR.phone contains %@", searchBar.text!)
-        let predicate3 = NSPredicate(format: "saleID contains %@", searchBar.text!)
-        let predicateOr = NSCompoundPredicate(type: .or, subpredicates: [predicate1, predicate2, predicate3])
-        request.predicate = predicateOr
-        loadSales(with: request)
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-            loadSales()
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
-        }
-    }
-}
 
 

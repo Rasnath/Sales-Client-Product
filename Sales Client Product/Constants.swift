@@ -14,6 +14,8 @@ struct K {
         static let cellForSales = "salesCell"
         static let cellSalesProduct = "salesProduct"
         static let cellSalesClient = "salesClient"
-        
+    }
+    struct Segue {
+        static let clientToInfo = "clientToInto"
     }
 }

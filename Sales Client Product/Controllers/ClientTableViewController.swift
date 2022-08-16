@@ -17,6 +17,7 @@ class ClientTableViewController: UITableViewController {
         super.viewDidLoad()
         loadClients()
     }
+  
 
     // MARK: - TableView data source
 
@@ -41,6 +42,17 @@ class ClientTableViewController: UITableViewController {
             self.context.delete(clients[indexPath.row])
             clients.remove(at: indexPath.row)
             saveClient()
+        }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.Segue.clientToInfo, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ClientSalesTableViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow{
+            destinationVC.selectedClient = clients[indexPath.row]
         }
     }
     

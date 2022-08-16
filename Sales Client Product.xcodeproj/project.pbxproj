@@ -17,7 +17,8 @@
 		8E1B806F28A90D1400BC78AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B806D28A90D1400BC78AA /* LaunchScreen.storyboard */; };
 		8E1B807728A90E2000BC78AA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B807628A90E2000BC78AA /* Constants.swift */; };
 		8E1B807928A90E9D00BC78AA /* SalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B807828A90E9D00BC78AA /* SalesViewController.swift */; };
-		8EDD9FA428AA344500BDB2F0 /* ClientTableViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD9FA328AA344500BDB2F0 /* ClientTableViewController copy.swift */; };
+		8E4EBB8E28AB88D4002AD6EC /* ClientSalesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EBB8D28AB88D4002AD6EC /* ClientSalesTableViewController.swift */; };
+		8EDD9FA428AA344500BDB2F0 /* ClientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD9FA328AA344500BDB2F0 /* ClientTableViewController.swift */; };
 		8EF445AB28AA7D98005EAA7C /* SalesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF445AA28AA7D98005EAA7C /* SalesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +35,8 @@
 		8E1B807028A90D1400BC78AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E1B807628A90E2000BC78AA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8E1B807828A90E9D00BC78AA /* SalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewController.swift; sourceTree = "<group>"; };
-		8EDD9FA328AA344500BDB2F0 /* ClientTableViewController copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClientTableViewController copy.swift"; sourceTree = "<group>"; };
+		8E4EBB8D28AB88D4002AD6EC /* ClientSalesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSalesTableViewController.swift; sourceTree = "<group>"; };
+		8EDD9FA328AA344500BDB2F0 /* ClientTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewController.swift; sourceTree = "<group>"; };
 		8EF445AA28AA7D98005EAA7C /* SalesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +88,8 @@
 			children = (
 				8E1B806328A90D1100BC78AA /* WelcomeViewController.swift */,
 				8E118B8B28A9323300B1FACD /* ProductTableViewController.swift */,
-				8EDD9FA328AA344500BDB2F0 /* ClientTableViewController copy.swift */,
+				8EDD9FA328AA344500BDB2F0 /* ClientTableViewController.swift */,
+				8E4EBB8D28AB88D4002AD6EC /* ClientSalesTableViewController.swift */,
 				8EF445AA28AA7D98005EAA7C /* SalesTableViewController.swift */,
 				8E1B807828A90E9D00BC78AA /* SalesViewController.swift */,
 			);
@@ -172,7 +175,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EDD9FA428AA344500BDB2F0 /* ClientTableViewController copy.swift in Sources */,
+				8E4EBB8E28AB88D4002AD6EC /* ClientSalesTableViewController.swift in Sources */,
+				8EDD9FA428AA344500BDB2F0 /* ClientTableViewController.swift in Sources */,
 				8EF445AB28AA7D98005EAA7C /* SalesTableViewController.swift in Sources */,
 				8E1B807728A90E2000BC78AA /* Constants.swift in Sources */,
 				8E1B806428A90D1100BC78AA /* WelcomeViewController.swift in Sources */,
