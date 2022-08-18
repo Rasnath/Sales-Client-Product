@@ -34,17 +34,6 @@ class ProductTableViewController: UITableViewController {
         return cell
     }
     
-    //MARK: - TableView Delegate
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-            self.context.delete(products[indexPath.row])
-            products.remove(at: indexPath.row)
-            saveProduct()
-        }
-    }
-    
     //MARK: - add Products
 
     @IBAction func addButtonP(_ sender: UIBarButtonItem) {

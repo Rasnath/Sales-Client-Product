@@ -16,42 +16,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNy-fh-JFg">
-                                <rect key="frame" x="119" y="407" width="153" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Clientes"/>
-                                <connections>
-                                    <segue destination="hv5-yW-p14" kind="show" id="lhM-61-42s"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQe-z3-A06">
-                                <rect key="frame" x="119" y="446" width="153" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Products"/>
-                                <connections>
-                                    <segue destination="k79-Cc-lCM" kind="show" id="L7G-rf-zsw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQI-Cb-IQ3">
-                                <rect key="frame" x="119" y="485" width="153" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Sales"/>
-                                <connections>
-                                    <segue destination="iWc-lM-qeu" kind="show" id="AmT-LY-wI6"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FeY-C6-wEd">
+                                <rect key="frame" x="16" y="367.66666666666669" width="358" height="109"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQI-Cb-IQ3">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Sales"/>
+                                        <connections>
+                                            <segue destination="ECl-eZ-lh0" kind="show" id="hdV-6j-vnJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNy-fh-JFg">
+                                        <rect key="frame" x="0.0" y="39" width="358" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Client"/>
+                                        <connections>
+                                            <segue destination="hv5-yW-p14" kind="show" id="lhM-61-42s"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQe-z3-A06">
+                                        <rect key="frame" x="0.0" y="78" width="358" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Product"/>
+                                        <connections>
+                                            <segue destination="k79-Cc-lCM" kind="show" id="L7G-rf-zsw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FeY-C6-wEd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WXR-XV-5ma"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FeY-C6-wEd" secondAttribute="trailing" id="hiy-gA-mSA"/>
+                            <constraint firstItem="FeY-C6-wEd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="p5g-Ke-FUz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lM0-3s-dvT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725" y="-21"/>
+            <point key="canvasLocation" x="724.61538461538464" y="-21.327014218009477"/>
         </scene>
         <!--Clients-->
         <scene sceneID="QAp-1M-Ryt">
@@ -62,7 +69,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="0WA-py-aVw">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -155,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="Vge-7a-SLS">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -198,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="din-fE-egx">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -220,17 +227,11 @@
                             <outlet property="delegate" destination="iWc-lM-qeu" id="d8M-UW-FaN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1hp-Nt-W2m">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fwk-FD-QSv">
-                            <connections>
-                                <segue destination="ECl-eZ-lh0" kind="show" id="ASo-nD-rLS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="1hp-Nt-W2m"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8a-Ca-bQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="-14"/>
+            <point key="canvasLocation" x="2505" y="-21"/>
         </scene>
         <!--Sales View Controller-->
         <scene sceneID="iX7-zZ-fY8">
@@ -313,7 +314,13 @@
                         <viewLayoutGuide key="safeArea" id="SGZ-nu-pra"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SFo-Vh-zX0"/>
+                    <navigationItem key="navigationItem" id="SFo-Vh-zX0">
+                        <barButtonItem key="rightBarButtonItem" title="Sales" id="UDN-58-kXH">
+                            <connections>
+                                <segue destination="iWc-lM-qeu" kind="show" id="X8O-qp-Uk2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="clientSeachBar" destination="RlF-Wy-h8J" id="Qnh-FG-CYc"/>
                         <outlet property="clientTableView" destination="4wo-Im-dKI" id="dla-PN-RCW"/>
@@ -323,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3Q-gG-HHn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2505" y="-14"/>
+            <point key="canvasLocation" x="1631" y="-14"/>
         </scene>
     </scenes>
     <resources>
